@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="lib/kanban.css"> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://use.fontawesome.com/8a4a932190.js"></script>
+    <script
+    src="https://code.jquery.com/jquery-3.5.1.slim.js"
+    integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM="
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+
+    <div style="text-align:center;">
+        <h1>Merhaba arkadaşlar</h1>
+        <div id="myDiv"></div>
+    </div>
+
+
+
+    <div id="template_task_ekleme" class="task_card">
+    <i id="windows_cover_saving" style="display:none;float: right; padding: 8px; font-size: 17px;"
+       class="fa fa-spinner fa-spin"> </i>
+    <div class="">
+        <div class="task_card_baslik">
+        </div>
+        <div class="" style="padding: 5px; color: #5f5f5f96; font-size: 11px; font-weight: 500;">
+            kaydetmek için Entre'e basınız
+        </div>
+    </div>
+</div>
+
+<input type="text" class="task_editable_kart_baslik_yeniekle" id="task_baslik_template"
+       style="display: none; margin: 9px 0px 0px 0px;" autocomplete="off" placeholder="İş başlığı giriniz">
+
+
+
+
+    <script src="lib/kanban.js"> </script> 
+    <script src="script.js"> </script> 
+</body>
+
+</html>
+ 

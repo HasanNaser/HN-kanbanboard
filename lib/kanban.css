@@ -1,0 +1,1072 @@
+
+.kanban-boards{
+    overflow: auto;
+    white-space: nowrap;
+}
+
+.kanban-boards .board{
+    width: 290px ;
+    height: 600px ;
+    margin-left: 2vw;
+    margin-top: 30px;
+    margin-bottom:50px ;
+    background: #f2f3f5 !important;
+    border-radius: 4px;
+    display: inline-block;
+    text-align:left;
+}
+
+.kanban-boards .board .board-head{ 
+    height: 35px;
+}
+.kanban-boards .board .board-title{ 
+    padding: 9px;
+    color: #5e6c84;
+    font-weight : 500;
+}
+
+.kanban-boards .board .board-body{
+    width: 100%;
+    max-height: 88%;
+    min-height: 88%;
+    overflow: auto;
+}
+.kanban-boards .add_new_btn{
+   background: transparent;
+    padding: 5px;
+    transition: .4s;
+    cursor: pointer;
+    display: none;
+} 
+.kanban-boards .add_new_btn:hover{
+    transition: .4s;
+    background: #1982051c;
+    padding: 5px;
+    width: 91%;
+    cursor: pointer;
+    margin: 2px 8px;
+    border-radius: 3px;
+}
+
+.kanban-boards .board:hover .add_new_btn{
+    display: block !important;
+}
+
+
+
+
+
+.kanban-boards .card{
+    display: none;
+    height: auto;
+    width: 94%;
+    margin: 7px 4px;
+    position: relative;
+    background: white;
+    -moz-transition: box-shadow 0.4s ease;
+    -webkit-transition: box-shadow 0.4s ease;
+    -o-transition: box-shadow 0.4s ease;
+    -moz-box-shadow: 0 35px 30px -30px rgba(0,0,0,0.4);
+    -webkit-box-shadow: 0 35px 30px -30px rgba(0,0,0,0.4);
+    -o-box-shadow: 0 35px 30px -30px rgba(0,0,0,0.4);
+    /*box-shadow: 0 10px 20px rgba(31, 214, 234, 0.2), 1px 2px 8px 2px rgba(4, 0, 255, 0.242);*/
+    box-shadow: 1px 3px 7px 2px rgba(0,0,0,0.15);
+    border-radius: 5px;
+}
+.kanban-boards .card:hover{
+    width: 98%;
+}
+.kanban-boards .card .card-drag{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 7px;
+    cursor: grab;
+}
+.kanban-boards .card .card-title{
+    margin: 5px 0;
+    word-wrap: break-word;
+    padding: 3px 7px;
+    white-space: normal;
+    text-align: justify;
+}
+ 
+ 
+
+@media (max-width: 1200px) { 
+    .kanban-boards .board{
+        width: 220px !important;
+        height: 600px !important;
+        margin-left: 2vw;
+        margin-top: 30px;
+        margin-bottom: 50px;
+        background: #f2f3f5 !important;
+        border-radius: 4px;
+        display: inline-block;
+    } 
+}
+
+
+
+
+
+
+
+
+
+
+select.form-control + .chosen-container.chosen-container-single .chosen-single{
+    height: 30px;
+}
+
+.task-modal {
+    position: absolute; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+    height: 100%;
+    transition: 1s;
+    z-index: 1008;
+    align-items: center;
+    justify-content: center;
+}
+.h-cover{
+    background-color: rgba(29, 41, 57, 0.39) !important;
+    position: fixed; /* Set the navbar to fixed position */
+    width: 100%; /* Full width */
+    height: 100%;
+    z-index: 1008;
+}
+.task-popub{
+     width: 750px;
+     margin: 0px auto;
+     float: none;
+     display: table;
+     padding-bottom: 25px;
+     overflow: auto;
+     position: absolute;
+     background-color:#fff;
+     -moz-transition: box-shadow 0.2s ease;
+     -webkit-transition: box-shadow 0.2s ease;
+     -o-transition: box-shadow 0.2s ease;
+     -moz-box-shadow: 0 35px 30px -30px rgba(0, 0, 0, 0.4);
+     -webkit-box-shadow: 0 35px 30px -30px rgba(0, 0, 0, 0.4);
+     -o-box-shadow: 0 35px 30px -30px rgba(0, 0, 0, 0.4);
+     border-radius: 6px;
+     box-shadow: 4px 5px 9px 2px rgba(0, 0, 0, 0.25);
+     z-index: 1020;
+    transition: .5s;
+ }
+
+@media (max-width: 1200px) {
+    .task-popub{
+        width: auto;
+    }
+    .h-s-section{
+        width: 100% !important;
+        padding: 0 12px !important;
+        margin-top: 8px;
+
+    }
+    .task_baslamaBitis_zamani_input{
+        width: 80% !important;
+
+    }
+    .task_pano {
+        width: 220px !important;
+        height: 600px !important;
+        margin-left: 2vw;
+        margin-top: 30px;
+        margin-bottom: 50px;
+        background: #f2f3f5 !important;
+        border-radius: 4px;
+        display: inline-block;
+    }
+    .panel-heading {
+        height: auto !important;
+    }
+    .br-header #navigasyon{
+        display: none !important;
+    }
+    .br-pagebody {
+        padding: 0 6px !important;
+    }
+
+    #ekDetayGoster::after {
+        border-top: 2px solid #418ee5c9;
+        content: '';
+        display: table-cell;
+        position: relative;
+        top: 0.7em;
+        width: 60% !important;
+        left: 1%;
+        opacity: .9;
+    }
+}
+
+.h-close-button {
+    margin-left: 13px;
+    transition: .5s;
+}
+/* tablo gizle */
+#hot{
+       display: none;
+   }
+#sayfalama{
+    display: none;
+}
+#filtre_alan{
+    display: none ;
+}
+.gizle{
+    display: none ;
+}
+
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 17px;
+    width: 19px;
+    left: 1px;
+    bottom: 2px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+input:checked + .slider {
+    background-color: #2196F3;
+}
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+input:checked + .slider:before {
+    -webkit-transform: translateX(22px);
+    -ms-transform: translateX(22px);
+    transform: translateX(18px);
+}
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+.slider.round:before {
+    border-radius: 50%;
+}
+
+
+@keyframes placeHolderShimmer{
+    0%{
+        background-position: -468px 0
+    }
+    100%{
+        background-position: 468px 0
+    }
+}
+.linear-background_loading {
+     animation-duration: 1s;
+     animation-fill-mode: forwards;
+     animation-iteration-count: infinite;
+     animation-name: placeHolderShimmer;
+     animation-timing-function: linear;
+     background: #f6f7f8;
+     background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+     background-size: 100%;
+     height: 100%;
+     width: 100%;
+     position: absolute;
+     text-align: center;
+     z-index: 150;
+     padding: 16%;
+     font-size: 25px;
+     font-weight: bold;
+     color: #0000006e;
+ }
+.linear-background_loading_pano {
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeHolderShimmer;
+    animation-timing-function: linear;
+    background: #f6f7f8;
+    background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+    background-size: 100%;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    z-index: 150;
+    padding: 16%;
+    font-size: 25px;
+    font-weight: bold;
+    color: #0000006e;
+}
+
+
+
+.task_panolari{
+    overflow: auto;
+    white-space: nowrap;
+}
+
+
+.task_pano {
+    width: 290px ;
+    height: 600px ;
+    margin-left: 2vw;
+    margin-top: 30px;
+    margin-bottom:50px ;
+    background: #f2f3f5 !important;
+    border-radius: 4px;
+    display: inline-block;
+    text-align:left;
+}
+.task_pano_ici{
+    width: 100%;
+    max-height: 88%;
+    min-height: 88%;
+    overflow: auto;
+}
+.task_pano_baslik{
+    height: 35px;
+}
+.task_baslik{
+    padding: 9px;
+    color: #5e6c84;
+    font-weight : 500;
+}
+.task_card{
+    display: none;
+    height: auto;
+    width: 94%;
+    margin: 7px 4px;
+    position: relative;
+    background: white;
+    -moz-transition: box-shadow 0.4s ease;
+    -webkit-transition: box-shadow 0.4s ease;
+    -o-transition: box-shadow 0.4s ease;
+    -moz-box-shadow: 0 35px 30px -30px rgba(0,0,0,0.4);
+    -webkit-box-shadow: 0 35px 30px -30px rgba(0,0,0,0.4);
+    -o-box-shadow: 0 35px 30px -30px rgba(0,0,0,0.4);
+    /*box-shadow: 0 10px 20px rgba(31, 214, 234, 0.2), 1px 2px 8px 2px rgba(4, 0, 255, 0.242);*/
+    box-shadow: 1px 3px 7px 2px rgba(0,0,0,0.15);
+    border-radius: 5px;
+}
+.task_card:hover{
+    width: 98%;
+}
+.task_card_fordrag{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 7px;
+    cursor: grab;
+}
+.task_card_baslik{
+    margin: 5px 0;
+    word-wrap: break-word;
+    padding: 3px 7px;
+    white-space: normal;
+    text-align: justify;
+}
+.task_card_gorev{
+    margin: 5px 0;
+    background: rgba(23, 164, 182, 0.37);
+    border-radius: 4px;
+    font-size: 12px;
+    padding: 3px 7px;
+    font-weight: 500;
+    color: #525252;
+    width: fit-content;
+    max-width: 61%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    opacity: .8;
+    transition: .5s;
+}
+.task_card_fordrag:hover .task_card_gorev {
+    transition: .5s;
+   opacity: 1;
+}
+
+.portlet-placeholder {
+    border-top: 1px solid #919191;
+    margin: 10px;
+
+}
+
+.task_kart_baslik{
+}
+.task_kart_baslik:before{
+    content: "Başlık";
+    font-size: 12px;
+    color: white;
+    padding: 3px;
+    background: #3a4149;
+}
+.h-section{
+    margin: 11px 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.task_kart_aciklama{
+    padding: 5px;
+}
+.task_kart_aciklama:before{
+    content: "Açıklama";
+    font-size: 12px;
+    color: white;
+    padding: 3px;
+    background: #3a4149;
+}
+.task_kart_durumlar{
+    font-size: 16px;
+    padding: 5px;
+}
+.task_kart_durumlar:before{
+    content: "Durum";
+    font-size: 12px;
+    color: white;
+    padding: 3px;
+    background: #3a4149;
+}
+.task_editable_kart_baslik{
+    /*width: 100%;*/
+    /*background: #ffffff !important;*/
+    /*transition: .3s;*/
+    /*line-height: normal;*/
+    /*border: 1px solid #80808038;*/
+    /*font-size: 20px;*/
+}
+.task_editable_kart_tipi{
+    /*width: 100%;*/
+    /*background: #ffffff !important;*/
+    /*transition: .3s;*/
+    /*line-height: normal;*/
+    /*border: 1px solid #80808038;*/
+    /*font-size: 15px;*/
+}
+
+.task_editable_kart_baslik:focus{
+    /*line-height: normal;*/
+    /*transition: .3s;*/
+    /*padding: 4px;*/
+    /*border: none;*/
+    /*background: white !important;*/
+}
+.task_editable_kart_baslik:empty {
+    /*background: white;*/
+}
+.task_editable_kart_baslik_yeniekle{
+    width: 100%;
+    background: white !important;
+    transition: .3s;
+    line-height: normal;
+    border: none;
+}
+.task_editable_kart_baslik_yeniekle:focus{
+    line-height: normal;
+    transition: .3s;
+    padding: 4px;
+    border: none;
+    background: white !important;
+}
+.task_editable_kart_baslik_yeniekle:empty {
+    background: white;
+}
+.task_editable_kart_time{
+    width: 100%;
+    background: #ffffff !important;
+    transition: .3s;
+    line-height: normal;
+    border: 1px solid #80808038;
+}
+.task_editable_kart_time:focus{
+    line-height: normal;
+    transition: .3s;
+    padding: 4px;
+    background: white !important;
+}
+
+.task_editable_kart_aciklama{
+    width: 100%;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #555;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.task_editable_kart_aciklama:focus{
+    /*line-height: normal;*/
+    /*transition: .3s;*/
+    /*padding: 4px;*/
+    /*border: none;*/
+    /*background: white !important;*/
+}
+
+
+.task_kart_ust_taraf{
+    align-items: center;
+    font-size: 16px;
+    display: inline-flex;
+}
+.task_kart_gorev{
+    font-weight: 600;
+    font-size: 15px ;
+    color: #393939;
+}
+.task_kart_gorev:before{
+content: "Bağlı olduğu görev";
+    font-size: 12px;
+    color: white;
+    padding: 3px;
+    background: #3a4149;
+    font-weight: 350;
+}
+.task_kart_iliskili_kurum{
+
+}
+.task_kart_gorev_idisi{
+    font-weight: 600;
+    font-size: 15px ;
+    color: #2a64b2;
+}
+.task_kart_olusturma_bilgileri{
+    font-size: 12px;
+    color: gray;
+    display: inline;
+}
+.task_kart_olusturma_bilgileri .ibkob_taih{
+    font-weight: 600;
+}
+.task_kart_olusturma_bilgileri .ibkob_kisi{
+    font-weight: 600;
+}
+.buyuk_kart_aktif_durum{
+    background: #1b82e0 !important;
+
+}
+
+.task_task_tipi .secenekler{
+    width: auto !important;
+     height: auto !important;
+    background: #ffffff;
+    font-weight: 900;
+    transition: .4s;
+}
+.task_task_tipi .secenekler:focus{
+    transition: .4s;
+    background: white;
+}
+.task_kategori .secenekler{
+    transition: .4s;
+    width: auto !important;
+    height: auto !important;
+    background: #ffffff;
+    font-weight: 900;
+}
+.task_kategori .secenekler:focus{
+    transition: .4s;
+    background: white;
+}
+.task_kart_gorev select{
+    width: auto !important;
+    height: auto !important;
+    background: #ffffff;
+    font-weight: 900;
+    transition: .4s;
+}
+.task_kart_gorev select:focus{
+    transition: .4s;
+    background: white;
+}
+.task_kart_iliskili_kurum .iliskili_kurum{
+    width: 100% !important;
+    height: auto !important;
+    background: #ffffff;
+    font-weight: 900;
+    transition: .4s;
+}
+.task_kart_iliskili_kurum .iliskili_kurum:focus{
+    transition: .4s;
+    background: white;
+}
+
+
+.yeni_task_ekle{
+    background: transparent;
+    padding: 5px;
+    transition: .4s;
+    cursor: pointer;
+    display: none;
+}
+.yeni_task_ekle:hover{
+    transition: .4s;
+    background: #1982051c;
+    padding: 5px;
+    width: 91%;
+    cursor: pointer;
+    margin: 2px 8px;
+    border-radius: 3px;
+}
+
+.task_pano:hover .yeni_task_ekle{
+    display: block !important;
+}
+#task_baslik_ekleniyor::placeholder{
+    color: rgba(128, 128, 128, 0.49);
+    font-weight: bold;
+}
+
+.diger_islemler{
+    font-size: 27px;
+    margin-top: -5px;
+    cursor: pointer;
+    padding: 0 8px;
+    border-radius: 3px;
+    transition: .4s;
+}
+.diger_islemler:hover {
+    font-size: 27px;
+    margin-top: -5px;
+    cursor: pointer;
+    color: rgba(255, 0, 0, 0.62);
+    transition: .4s;
+    background: #8080804f;
+}
+#tablo_secenekler{
+    display: none !important;
+}
+#form_temizle{
+    display: none !important;
+}
+#evol{
+    display: none !important;
+}
+#kat_filtre{
+    display: none !important;
+}
+.aciklama{
+    margin: -35px 3px 31px 34px;
+    padding: 0px 0px 30px 27px;
+    transition: .5s;
+    font-size: 12px;
+}
+
+
+.task_baslamaBitis_zamani_input{
+    width: 80%;
+    /*background: #ffffff !important;*/
+    /*transition: .3s;*/
+    /*line-height: normal;*/
+    /*border: 1px solid #80808038;*/
+    /*font-size: 18px;*/
+}
+.dhx_cancel_btn_set {
+    border: 1px solid #fff;
+    background-color: #fff;
+    color: #0288d1;
+    float: right;
+    float: left;
+}
+.task_kart_takvim{
+    display: none;
+}
+.task_kart_takvim:before{
+    content: "Başlangıç ve Bitiş zamanı seçiniz";
+    font-size: 12px;
+    color: white;
+    padding: 3px;
+    background: #3a4149;
+}
+
+.h-s-section{
+    width: 50%;
+    padding: 0 12px;
+}
+
+.tooltip2 {
+    /*position: absolute;*/
+    right: 2%;
+    display: inline-block;
+    color: gray;
+    border-radius: 3px;
+    border: 1px dashed #82c4e8;
+}
+
+.tooltip2 .tooltiptext {
+    font-size: 12px;
+    visibility: hidden;
+    width: 60px;
+    background-color: rgba(85, 85, 85, 0.71);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 2px;
+    position: absolute;
+    z-index: 1;
+    bottom: 118%;
+    left: 50%;
+    margin-left: -110px;
+    opacity: 0;
+
+    transition: opacity 0.3s;
+}
+
+.tooltip2 .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.tooltip2:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+.ymaps-2-1-76-map{
+    position: initial !important;
+    display: initial !important;
+}
+
+#konum_linki{
+    width: 100%; border:1px dashed #4babde; font-size: small; color: gray;
+}
+
+.detay_1265{
+    font-size: 12px;
+}
+
+.davetli_kisi{
+    border: none !important;
+    border-top: 1px solid rgba(0, 0, 0, 0.125) !important;
+}
+
+.gorevli_kisi{
+    /*border: none !important;*/
+    /*border-top: 1px solid rgba(0, 0, 0, 0.125) !important;*/
+}
+.davetli_kisiler_div{
+    display: none;
+}
+
+.davetli_kisi_template{
+    display: none;
+}
+.gorevli_kisi_template{
+    display: none;
+}
+.show_{
+    display: block !important;
+
+}
+.gorev-kisi-cikart{
+    cursor: pointer;
+}
+
+.tabloElementSayisi{
+    border: 1px solid #5e6c8440 !important;
+    color: #5e6c84 !important;
+    font-weight: 500;
+    opacity: .6;
+}
+.taskSayisi{
+    opacity: .6;
+}
+.tabloElementSayisi:hover + .taskSayisi{
+    opacity: 1;
+}
+.tabloElementSayisi:focus + .taskSayisi{
+    opacity: 1;
+}
+.tabloElementSayisi:hover{
+    opacity: 1;
+}
+.tabloElementSayisi:focus{
+    opacity: 1;
+}
+
+select.form-control + .chosen-container-multi .chosen-choices li.search-choice {
+    white-space: inherit !important;
+    max-width: 100% !important;
+    text-align: left !important;
+}
+
+.redactor-editor {
+    padding: 15px !important;
+    border: 1px solid #ccc !important;
+}
+
+#ekDetayGoster{
+    /*display: table !important;*/
+    /*width: 100%;*/
+    padding: 0 5px;
+    cursor: pointer;
+}
+#ekDetayGoster::after {
+    border-top: 2px solid #418ee5c9;
+    content: '';
+    display: table-cell;
+    position: relative;
+    top: 0.7em;
+    width: 82%;
+    left: 1%;
+    opacity: .9;
+}
+
+
+/*#ekDetayGoster::before{*/
+/*    border-top: 2px solid #418ee5c9;*/
+/*    content: '';*/
+/*    display: table-cell;*/
+/*    position: relative;*/
+/*    top: 0.5em;*/
+/*    right: 1%;*/
+/*    width: 41%;*/
+/*    opacity: .9;*/
+/**/
+/*}*/
+
+
+.etiket-modal{
+    position: absolute;
+    display: none;
+    width: auto;
+    margin: 0px auto;
+    float: none;
+    padding-bottom: 25px;
+    overflow: auto;
+    background-color:#fff;
+    -moz-transition: box-shadow 0.2s ease;
+    -webkit-transition: box-shadow 0.2s ease;
+    -o-transition: box-shadow 0.2s ease;
+    -moz-box-shadow: 0 35px 30px -30px rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: 0 35px 30px -30px rgba(0, 0, 0, 0.4);
+    -o-box-shadow: 0 35px 30px -30px rgba(0, 0, 0, 0.4);
+    border-radius: 6px;
+    box-shadow: 4px 5px 9px 2px rgba(0, 0, 0, 0.25);
+    z-index: 1040;
+    transition: .5s;
+}
+
+
+
+
+
+
+
+/* The container */
+.etiket-label {
+    display: block;
+    position: relative;
+    padding-left: 0;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.etiket-label .etiket-checkbox {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.etiket-checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.etiket-label .etiket-checkbox:checked ~ .etiket-checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.etiket-label .etiket-checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.etiket-text{
+    position: absolute;
+    z-index: 100;
+    font-weight: normal;
+    width: 64%;
+    margin-left: 21px;
+    text-align: center;
+    pointer-events: none;
+}
+
+.etiket{
+    width: 200px;
+    height: 25px;
+    color: white;
+}
+#etiketler{
+    width: 250px;
+    padding: 1px 15px;
+}
+.etiket_duzelt{
+    position: absolute;
+    z-index: 500;
+    margin: 5px;
+    left: 86%;
+    color: black;
+}
+
+.etiket-checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 195px;
+    transition: .3s;
+
+}
+.etiket-label:hover .etiket-checkbox ~ .etiket-checkmark {
+    width: 200px;
+    transition: .3s;
+}
+
+.etiketler-baslik{
+    text-align: center;
+    width: 100%;
+    margin-top: 8px;
+    font-weight: 500;
+}
+.etiketler-info{
+    display: none;
+    text-align: center;
+    width: 100%;
+    margin-top: 8px;
+    font-weight: 500;
+}
+
+#etiket-1 .etiket-checkmark {
+    background-color: rgba(33, 150, 243, 1);
+    color: white;
+}
+
+
+.task-etiketi{
+    padding: 3px 7px;
+    color: white;
+    text-align: center;
+    border-radius: 0;
+    margin: 2px 2px;
+    min-width: 60px;
+    cursor: pointer;
+    min-height: 24px;
+}
+
+
+.field-title{
+    font-weight: 600;
+}
+
+.detay_bilgilendirme{
+    display: none;
+    font-size: 12px;
+    color: #d9534f;
+
+}
+
+#istakip_tarih  .form-control {
+    border: 3px solid #e6e6e6;
+    height: 37px;
+}
+
+
+
+.filter_dugmeleri{
+    opacity: .8;
+    height: auto;
+    padding: 14px 14px;
+    position: relative;
+    background: white;
+    -moz-transition: box-shadow 0.4s ease;
+    -webkit-transition: box-shadow 0.4s ease;
+    -o-transition: box-shadow 0.4s ease;
+    -moz-box-shadow: 0 35px 30px -30px rgba(0,0,0,0.4);
+    -webkit-box-shadow: 0 35px 30px -30px rgba(0,0,0,0.4);
+    -o-box-shadow: 0 35px 30px -30px rgba(0,0,0,0.4);
+    /* box-shadow: 0 10px 20px rgba(31, 214, 234, 0.2), 1px 2px 8px 2px rgba(4, 0, 255, 0.242); */
+    box-shadow: 1px 3px 7px 2px rgba(0,0,0,0.09);
+    border-radius: 0px;
+    transition: .8s;
+}
+.filter_dugmeleri:hover{
+    opacity: 1;
+    transition: .5s;
+
+}
+.highlight {
+    background-color: #fff34d;
+    -moz-border-radius: 5px; /* FF1+ */
+    -webkit-border-radius: 5px; /* Saf3-4 */
+    border-radius: 5px; /* Opera 10.5, IE 9, Saf5, Chrome */
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.7); /* FF3.5+ */
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.7); /* Saf3.0+, Chrome */
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.7); /* Opera 10.5+, IE 9.0 */
+}
+
+.highlight {
+    /*padding:1px;*/
+    /*margin:0 -4px;*/
+}
+#task_filter:before{
+    content: "İşler";
+}
+.input_description{
+    margin: 0px;
+    margin-left: 13px;
+    color: gray;
+    font-weight: 500;
+    font-size: 11px;
+}
+.istakip-madal-btn{
+    float: right;color:#0288d1;font-weight: 700; line-height: 1em
+}
