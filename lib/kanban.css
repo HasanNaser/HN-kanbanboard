@@ -51,10 +51,7 @@
 .kanban-boards .board:hover .add_new_btn{
     display: block !important;
 }
-
-
-
-
+ 
 
 .kanban-boards .card{
     display: none;
@@ -91,6 +88,26 @@
     text-align: justify;
 }
  
+
+.kanban-boards .card-input{
+    margin: 8px 8px 2px 8px;
+    width: 94%;
+    background: white !important;
+    transition: .3s;
+    line-height: normal;
+    border: none;
+}
+.kanban-boards .card-input:focus{
+    line-height: normal;
+    transition: .3s;
+    font-weight: 600;
+    padding: 6px;
+    border: none;
+    background: white !important;
+}
+.kanban-boards .card-input:empty {
+    background: white;
+}
  
 
 @media (max-width: 1200px) { 
@@ -354,8 +371,7 @@ input:checked + .slider:before {
     color: #5e6c84;
     font-weight : 500;
 }
-.task_card{
-    display: none;
+.task_card{ 
     height: auto;
     width: 94%;
     margin: 7px 4px;
