@@ -16,7 +16,10 @@ var options = {
             "id":"3",
             "title":"Yapildi"
         },
-    }
+    },
+    "onSave" : function(info){
+        console.log(info);
+    },
 }
 
 var nesne = kanbanTable(options).init();
