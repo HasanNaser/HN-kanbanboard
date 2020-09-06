@@ -1,17 +1,25 @@
-var kanbanTable = function (options) {
+var HN_kanbanTable = function (options) {
   let self = {};
   self.boards = options.boards;
+  self.cards = options.cards;
   self.element = document.querySelector(options.container);
-  self.cardTemp =
-    '<div id="template" class="card" onclick=""><i id="windows_cover_saving" style="display:none;float: right; padding: 8px; font-size: 17px;" class="fa fa-spinner fa-spin"> </i> <div class="card-drag"> <div class="card-title">     </div> </div> </div>';
+  self.cardTemp ='<div id="template" class="card" onclick=""><i id="windows_cover_saving" style="display:none;float: right; padding: 8px; font-size: 17px;" class="fa fa-spinner fa-spin"> </i> <div class="card-drag"> <div class="card-title">     </div> </div> </div>';
 
   self.onSave = options.onSave;
- 
 
+
+  let builtCards=(cards)=>{
+     //clean up boards 
+   (document.querySelectorAll(".kanban-boards .board .card")).forEach(elem=>elem.remove()); 
+    for (var key of Object.keys(cards)) {
+      let cardHTML = '<div id="'+cards[key].card_id+'" class="card" onclick=""> <div class="card-drag"> <div class="card-title">'+cards[key].card_title+' </div> </div> </div>';
+      document.querySelector(".kanban-boards #board_"+cards[key].board_id+" .board-body").innerHTML += cardHTML;  
+    }
+  }
   let builtBoards = (boards) => {
     var boardsHTML = '<div class="kanban-boards">';
     for (var key of Object.keys(boards)) {
-      boardsHTML += '<div class="board" id="board_' + key + '">';
+      boardsHTML += '<div class="board" id="board_' + boards[key].id + '">';
       boardsHTML += '<div class="board-head">';
       boardsHTML += ' <p class="board-title">';
       boardsHTML += boards[key].title;
@@ -20,7 +28,7 @@ var kanbanTable = function (options) {
       boardsHTML += '<div class="board-body"></div> ';
       boardsHTML += '<div class="add_new_btn" style="display: block">';
       boardsHTML +=
-        ' <a style="padding: 9px;font-weight: 900; color: gray;"><i class="fa fa-plus"></i> &nbsp; Add Card</a>';
+        ' <a style="padding: 9px;font-weight:   900; color: gray;"><i class="fa fa-plus"></i> &nbsp; Add Card</a>';
       boardsHTML += "</div>";
       boardsHTML += "</div>";
     }
@@ -41,7 +49,7 @@ var kanbanTable = function (options) {
 
   
       if(currentCardCreater == null)
-          document.querySelector(".kanban-boards #"+boardId+" .board-body").innerHTML=templateCardCreater; 
+          document.querySelector(".kanban-boards #"+boardId+" .board-body").innerHTML+=templateCardCreater; 
       else
         document.querySelector(".kanban-boards #"+boardId+" .board-body").appendChild(currentCardCreater);  
   
@@ -54,7 +62,7 @@ var kanbanTable = function (options) {
             let info ={};
             info.title = this.value;
             info.boardId = this.parentNode.parentNode.parentNode.id;
-            self.onSave(info); 
+            self.onCardAdd(info); 
           }
           
         }
@@ -63,15 +71,24 @@ var kanbanTable = function (options) {
     }; 
     // add event listeners to "New Card" buttons
     (document.querySelectorAll(".board .add_new_btn")).forEach(elem => elem.addEventListener("click", prepareCardInput));
-
+    builtCards(self.cards);
+    
   };
+
+  
+
+
+
 
   let setBoards = (boards) => {
     self.boards = boards;
     init();
   };
 
-  
+  let setCards = (cards) => {
+    self.cards = cards;
+    builtCards(self.cards);
+  };
     
   var init = function () {
     builtBoards(self.boards); 
@@ -81,6 +98,7 @@ var kanbanTable = function (options) {
   
   return {
     setBoards: setBoards,
+    setCards : setCards,
     init: init,
   };
 };

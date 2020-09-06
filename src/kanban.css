@@ -53,8 +53,7 @@
 }
  
 
-.kanban-boards .card{
-    display: none;
+.kanban-boards .card{ 
     height: auto;
     width: 94%;
     margin: 7px 4px;
