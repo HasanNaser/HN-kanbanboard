@@ -1,3 +1,6 @@
+
+var sortable = require("sortablejs");
+
 var HN_kanbanTable = function (options) {
   let self = {};
   self.boards = options.boards;

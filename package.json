@@ -4,7 +4,7 @@
   "description": "loading...",
   "main": "demo.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "built": "webpcak --config prod.config.js"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,7 @@
     "sortablejs": "^1.12.0"
   },
   "devDependencies": {
-    "webpack": "^4.44.2"
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
   }
 }
