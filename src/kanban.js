@@ -1,7 +1,11 @@
 
-var sortable = require("sortablejs");
+(function(){
 
-var HN_kanbanTable = function (options) {
+var Sortable = require("sortablejs")
+
+this.HN_kanbanTable = function (options) {
+
+
   let self = {};
   self.boards = options.boards;
   self.cards = options.cards;
@@ -75,6 +79,17 @@ var HN_kanbanTable = function (options) {
     // add event listeners to "New Card" buttons
     (document.querySelectorAll(".board .add_new_btn")).forEach(elem => elem.addEventListener("click", prepareCardInput));
     builtCards(self.cards);
+
+
+    var options = { 
+      group: 'share',
+      animation: 150,  
+    };
+    for (var key of Object.keys(boards)) { 
+       Sortable.create(document.querySelector("#board_" + boards[key].id + " .board-body"), options);
+    }
+
+   
     
   };
 
@@ -105,3 +120,8 @@ var HN_kanbanTable = function (options) {
     init: init,
   };
 };
+ 
+
+})();
+
+

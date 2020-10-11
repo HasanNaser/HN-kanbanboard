@@ -57,5 +57,4 @@ var options = {
 
 var nesne = HN_kanbanTable(options);
 nesne.init();
-
  
