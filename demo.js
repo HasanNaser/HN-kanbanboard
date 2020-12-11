@@ -1,5 +1,5 @@
 
-
+let log = console.log;
 
 var options = {
     container : "#myDiv",
@@ -23,7 +23,7 @@ var options = {
              "card_id":"1",
              "card_title":"Card Drag/drop feature"
          },
-         1:{
+        1:{
             "board_id":"1",
             "card_id":"2",
             "card_title":"onCardclick function"
@@ -50,9 +50,28 @@ var options = {
         }, 
     },
     onCardAdd : function(info){
-        console.log(info);
+        log(info);
     },
-    
+    onCardDrgStart : function (evt){
+    },
+    onCardDrgEnd : function (evt){
+    //     console.log(evt.to,// target list
+    //     evt.from, // previous list
+    //     evt.oldIndex, // element's old index within old parent
+    //     evt.newIndex,// element's new index within new parent
+    //     evt.oldDraggableIndex, // element's old index within old parent, only counting draggable elements
+    //     evt.newDraggableIndex,// element's new index within new parent, only counting draggable elements
+    //     evt.clone, // the clone element
+    //     evt.pullMode,// when item is in another sortable: `"clone"` if cloning, `true` if moving
+    // )
+    },
+    onCardSortChange : function (evt){
+
+    },
+    onCardClick : function (val_attr){
+        log(val_attr);
+
+    }
 }
 
 var nesne = HN_kanbanTable(options);

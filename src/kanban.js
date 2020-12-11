@@ -11,18 +11,29 @@
     self.element = document.querySelector(options.container);
     self.cardTemp = '<div id="template" class="card" onclick=""><i id="windows_cover_saving" style="display:none;float: right; padding: 8px; font-size: 17px;" class="fa fa-spinner fa-spin"> </i> <div class="card-drag"> <div class="card-title">     </div> </div> </div>';
 
-    self.onSave = options.onSave;
+    self.onCardAdd = options.onCardAdd;
+    self.onCardDrgStart = options.onCardDrgStart;
+    self.onCardDrgEnd = options.onCardDrgEnd;
+    self.onCardSortChange = options.onCardSortChange;
+    self.onCardClick = options.onCardClick;
+
 
 
     let builtCards = (cards) => {
       //clean up boards 
       (document.querySelectorAll(".kanban-boards .board .card")).forEach(elem => elem.remove());
+
       for (var key of Object.keys(cards)) {
-        let cardHTML = '<div id="' + cards[key].card_id + '" class="card" onclick=""> <div class="card-drag"> <div class="card-title">' + cards[key].card_title + ' </div> </div> </div>';
+        let cardHTML = '<div data-id="' + cards[key].card_id + '" class="card" onclick=""> <div class="card-drag"> <div class="card-title">' + cards[key].card_title + ' </div> </div> </div>';
         document.querySelector(".kanban-boards #board_" + cards[key].board_id + " .board-body").innerHTML += cardHTML;
       }
+      (document.querySelectorAll(".board .card")).forEach(elem => elem.addEventListener("click", function (){
+        self.onCardClick(this.getAttribute("data-id"));
+      }));
     }
+
     let builtBoards = (boards) => {
+      
       var boardsHTML = '<div class="kanban-boards">';
       for (var key of Object.keys(boards)) {
         boardsHTML += '<div class="board" id="board_' + boards[key].id + '">';
@@ -75,33 +86,42 @@
         document.querySelector(".kanban-boards #card_creater input").onkeypress = getCardInfo;
 
       };
+
       // add event listeners to "New Card" buttons
       (document.querySelectorAll(".board .add_new_btn")).forEach(elem => elem.addEventListener("click", prepareCardInput));
+
       builtCards(self.cards);
 
 
       var options = {
         group: 'share',
         animation: 150,
+        onStart : self.onCardDrgStart,
+        onEnd: self.onCardDrgEnd,  // Element dragging ended
+        onUpdate : self.onCardSortChange, // Changed sorting within list
+        store: {
+           // Get the order of elements. Called once during initialization.
+          get: function (sortable) {
+            var order = localStorage.getItem(sortable.options.group.name);
+            return order ? order.split("|") : [];
+          },
+          // Save the order of elements. Called onEnd (when the item is dropped).
+          set: function (sortable) {
+            var order = sortable.toArray();
+            localStorage.setItem(sortable.options.group.name, order.join("|"));
+          },
+        },
       };
       for (var key of Object.keys(boards)) {
         Sortable.create(document.querySelector("#board_" + boards[key].id + " .board-body"), options);
       }
 
-      var options = { 
-        animation: 150,
-      };
-      Sortable.create(document.querySelector(".kanban-boards"), options);
-
-
-
+      // var options1 = {
+      //   animation: 150,
+      // };
+      // Sortable.create(document.querySelector(".kanban-boards"), options1);
 
     };
-
-
-
-
-
 
     let setBoards = (boards) => {
       self.boards = boards;
@@ -112,6 +132,7 @@
       self.cards = cards;
       builtCards(self.cards);
     };
+
 
     var init = function () {
       builtBoards(self.boards);

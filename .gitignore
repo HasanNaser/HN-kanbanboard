@@ -2,3 +2,5 @@ node-modules
 package-lock.json
 webpack.config.js
 node-modules/*
+/node_modules/
+.idea
