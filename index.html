@@ -6,11 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="src/kanban.css"> 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://use.fontawesome.com/8a4a932190.js"></script>
-    <script
-    src="https://code.jquery.com/jquery-3.5.1.slim.js"
-    integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM="
-    crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="temp/enlighterjs.min.css" />
 
 
 </head>
@@ -18,20 +14,84 @@
 <body>
 
 
-    <div style="text-align:center;">
-        <h1>...........................</h1>
-        <div id="myDiv"></div>
+    <div style="width: 80%; margin: auto; text-align: center">
+
+        <div id="myDiv"><h1>Hello People</h1></div>
     </div>
 
- 
- 
- 
- 
+<div style="width: 70%; margin: auto">
+    <h1>Example Code :</h1>
+
+    <pre data-enlighter-language="less">
+
+let lists = [
+        {"id": "todo", "title": "Todo"},
+        {"id": "doing", "title": "Doing"},
+        {"id": "done", "title": "Done"}
+        ]
+let cards_ = [
+    {"board_id": "todo","card_id": "1","card_title": "Card Drag/drop feature"},
+    {"board_id": "todo","card_id": "2","card_title": "onCardclick function"},
+    {"board_id": "done","card_id": "4","card_title": "setCards function"},
+    {"board_id": "done","card_id": "5","card_title": "onCardAdded function"},
+    {"board_id": "done","card_id": "8","card_title": "add new card feature"},
+    {"board_id": "done","card_id": "34","card_title": ".........."},
+];
+
+let options = {
+    container: "#myDiv",
+    lists: lists,
+    cards: cards_,
+    onCardAdd: function (data) {
+        //data.boardId, //data.title,
+        console.info(data);
+    },
+    onCardDrgStart: function (evt) {
+        //evt.currentList   :current list
+        //evt.cardSelf      :card element
+        console.info(evt)
+    },
+    onCardDrgEnd: function (evt) {
+        //evt.listTo           : target list
+        //evt.boardFrom       : previous list
+        //evt.oldIndex        : element's old index within old parent
+        //evt.newInde         : element's new index within new parent
+        //evt.cardSelf        : card element
+        console.info(evt)
+    },
+    onCardSortChange: function (evt) {
+        //evt.currentList     :current list
+        //evt.oldIndex        : element's old index within old parent
+        //evt.newInde         : element's new index within new parent
+        //evt.cardSelf        : card element
+        console.info(evt)
+    },
+    onCardClick: function (data) {
+        //data.title,
+        //data.currentListId,
+        //data.currentList,
+        console.info(data);
+    }
+}
+
+
+var nesne = HN_kanbanTable(options);
+nesne.init();
+
+    </pre>
+
+</div>
+
+
+
 
 
     <script src="dist/kanban.js"></script>
+
+    <script type="text/javascript" src="temp/enlighterjs.min.js"></script>
     <script src="demo.js"></script>
- 
+    <script src="https://use.fontawesome.com/8a4a932190.js"></script>
+
 </body>
 
 </html>
