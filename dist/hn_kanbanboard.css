@@ -1,0 +1,150 @@
+
+.kanban-boards{
+    overflow: auto;
+    white-space: nowrap;
+}
+
+.kanban-boards .board{
+    width: 290px ;
+    height: 600px ;
+    margin-left: 2vw;
+    margin-top: 30px;
+    margin-bottom:50px ;
+    background: #f2f3f5 !important;
+    border-radius: 4px;
+    display: inline-block;
+    text-align:left;
+}
+
+.kanban-boards .board .board-head{ 
+    height: 35px;
+}
+.kanban-boards .board .board-title{ 
+    padding: 9px;
+    color: #5e6c84;
+    font-weight : 500;
+}
+
+.kanban-boards .board .board-body{
+    width: 100%;
+    max-height: 88%;
+    min-height: 88%;
+    overflow: auto;
+}
+.kanban-boards .add_new_btn{
+   background: transparent;
+    padding: 5px;
+    transition: .4s;
+    cursor: pointer;
+    display: none;
+} 
+.kanban-boards .add_new_btn:hover{
+    transition: .4s;
+    background: #1982051c;
+    padding: 5px;
+    width: 91%;
+    cursor: pointer;
+    margin: 2px 8px;
+    border-radius: 3px;
+}
+
+.kanban-boards .board:hover .add_new_btn{
+    display: block !important;
+}
+ 
+
+.kanban-boards .card{ 
+    height: auto;
+    width: 94%;
+    margin: 7px 4px;
+    position: relative;
+    background: white;
+    -moz-transition: box-shadow 0.4s ease;
+    -webkit-transition: box-shadow 0.4s ease;
+    -o-transition: box-shadow 0.4s ease;
+    -moz-box-shadow: 0 35px 30px -30px rgba(0,0,0,0.4);
+    -webkit-box-shadow: 0 35px 30px -30px rgba(0,0,0,0.4);
+    -o-box-shadow: 0 35px 30px -30px rgba(0,0,0,0.4);
+    /*box-shadow: 0 10px 20px rgba(31, 214, 234, 0.2), 1px 2px 8px 2px rgba(4, 0, 255, 0.242);*/
+    box-shadow: 1px 3px 7px 2px rgba(0,0,0,0.15);
+    border-radius: 5px;
+}
+.kanban-boards .card:hover{
+    width: 98%;
+}
+.kanban-boards .card .card-drag{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 7px;
+    cursor: grab;
+}
+.kanban-boards .card .card-title{
+    margin: 5px 0;
+    word-wrap: break-word;
+    padding: 3px 7px;
+    white-space: normal;
+    text-align: justify;
+}
+ 
+
+.kanban-boards .card-input{
+    margin: 8px 8px 2px 8px;
+    width: 94%;
+    background: white !important;
+    transition: .3s;
+    line-height: normal;
+    border: none;
+}
+.kanban-boards .card-input:focus{
+    
+    line-height: normal;
+    transition: .3s;
+    font-weight: 600;
+    padding: 6px;
+    border: none;
+    background: white !important;
+}
+.kanban-boards .card-input:empty {
+    background: white;
+}
+ 
+
+.kanban-boards .task_card{ 
+    height: auto;
+    width: 94%;
+    margin: 7px 4px;
+    position: relative;
+    background: white;
+    -moz-transition: box-shadow 0.4s ease;
+    -webkit-transition: box-shadow 0.4s ease;
+    -o-transition: box-shadow 0.4s ease;
+    -moz-box-shadow: 0 35px 30px -30px rgba(0,0,0,0.4);
+    -webkit-box-shadow: 0 35px 30px -30px rgba(0,0,0,0.4);
+    -o-box-shadow: 0 35px 30px -30px rgba(0,0,0,0.4);
+    /*box-shadow: 0 10px 20px rgba(31, 214, 234, 0.2), 1px 2px 8px 2px rgba(4, 0, 255, 0.242);*/
+    box-shadow: 1px 3px 7px 2px rgba(0,0,0,0.15);
+    border-radius: 5px;
+}
+.kanban-boards .task_card:hover{
+    width: 98%;
+}
+
+@media (max-width: 1200px) { 
+    .kanban-boards .board{
+        width: 220px !important;
+        height: 600px !important;
+        margin-left: 2vw;
+        margin-top: 30px;
+        margin-bottom: 50px;
+        background: #f2f3f5 !important;
+        border-radius: 4px;
+        display: inline-block;
+    } 
+}
+
+
+
+
+
+ 

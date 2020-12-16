@@ -59,9 +59,9 @@
 
 
         if (currentCardCreater == null)
-          document.querySelector(".kanban-boards [data-boardid=" + listId + "]  .board-body").innerHTML += templateCardCreater;
+          document.querySelector(".kanban-boards [data-boardid='" + listId + "']  .board-body").innerHTML += templateCardCreater;
         else
-          document.querySelector(".kanban-boards [data-boardid=" + listId + "]  .board-body").appendChild(currentCardCreater);
+          document.querySelector(".kanban-boards [data-boardid='" + listId + "']  .board-body").appendChild(currentCardCreater);
 
         document.querySelector(".kanban-boards #card_creater input").focus();
 
@@ -127,13 +127,13 @@
         },
       };
       for (var key of Object.keys(lists)) {
-        Sortable.create(document.querySelector(".kanban-boards  [data-boardid=" + lists[key].id + "] .board-body"), options);
+        Sortable.create(document.querySelector(".kanban-boards  [data-boardid='" + lists[key].id + "'] .board-body"), options);
       }
 
-      var options1 = {
-        animation: 150,
-      };
-      Sortable.create(document.querySelector(".kanban-boards"), options1);
+      // var options1 = {
+      //   animation: 150,
+      // };
+      // Sortable.create(document.querySelector(".kanban-boards"), options1);
 
     };
 

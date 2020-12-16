@@ -1,11 +1,11 @@
 {
-  "name": "HN-kanbanboard",
+  "name": "hn-kanbanboard-npm",
   "version": "1.0.0",
   "description": "loading...",
   "main": "demo.js",
   "scripts": {
-    "built": "browserify src/kanban.js -o dist/kanban.js",
-    "watch": "watchify src/kanban.js -o dist/kanban.js"
+    "built": "browserify src/kanban.js -o dist/hn_kanbanboard.js",
+    "watch": "watchify src/kanban.js -o dist/hn_kanbanboard.js"
   },
   "repository": {
     "type": "git",

@@ -1,38 +1,29 @@
 
 
-let lists = [{"id": "todo", "title": "Todo"}, {"id": "doing", "title": "Doing"}, {"id": "done", "title": "Done"}]
+let lists = [{"id": "1", "title": "Todo"}, {"id": "2", "title": "Doing"}, {"id": "3", "title": "Done"}]
 
 let cards_ = [
     {
-        "board_id": "todo",
+        "board_id": "1",
         "card_id": "1",
         "card_title": "Card Drag/drop feature"
     },
     {
-        "board_id": "todo",
+        "board_id": "2",
         "card_id": "2",
         "card_title": "onCardclick function"
     },
     {
-        "board_id": "done",
+        "board_id": "3",
         "card_id": "4",
         "card_title": "setCards function"
     },
     {
-        "board_id": "done",
+        "board_id": "3",
         "card_id": "5",
-        "card_title": "onCardAdded function"
+        "card_title": "Hello People"
     },
-    {
-        "board_id": "done",
-        "card_id": "8",
-        "card_title": "add new card feature"
-    },
-    {
-        "board_id": "done",
-        "card_id": "34",
-        "card_title": ".........."
-    },
+
 ];
 
 var options = {
@@ -76,8 +67,6 @@ var options = {
 
 
 var nesne = HN_kanbanTable(options);
-
-
 nesne.init();
 
 
